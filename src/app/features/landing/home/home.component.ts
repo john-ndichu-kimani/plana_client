@@ -6,14 +6,22 @@ import { StatcountComponent } from '../statcount/statcount.component';
 import { EventsComponent } from '../events/events.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { ContactComponent } from '../contact/contact.component';
+import { HeroComponent } from '../hero/hero.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent,StatcountComponent,AboutUsComponent,EventsComponent,TestimonialsComponent,ContactComponent,FooterComponent],
+  imports: [
+    NavbarComponent,
+    StatcountComponent,
+    AboutUsComponent,
+    EventsComponent,
+    TestimonialsComponent,
+    ContactComponent,
+    FooterComponent,
+    HeroComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

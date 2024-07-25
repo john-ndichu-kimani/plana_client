@@ -1,0 +1,16 @@
+/* user.component.css */
+.landing {
+  position: relative;
+}
+
+.p-4 {
+  position: relative; /* Ensure that the container doesn't show a default background during transitions */
+  background-color: transparent; /* Avoid any default background color that might show up */
+}
+
+/* Optional: Ensure animations container fills the space */
+.router-outlet-container {
+  position: absolute; /* Cover the area where the animation happens */
+  width: 100%;
+  height: 100%;
+}

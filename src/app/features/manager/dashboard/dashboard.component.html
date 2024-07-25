@@ -1,0 +1,51 @@
+<div class="p-4">
+  <!-- Dashboard Overview -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-14">
+
+    <!-- Events Summary -->
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+      <h3 class="text-lg font-semibold mb-4">Events Summary</h3>
+      <div>
+        <h4 class="text-md font-medium">Upcoming Events</h4>
+        <ul>
+          <li *ngFor="let event of (upcomingEvents$ | async)">
+            {{ event.title }} - {{ event.date | date }}
+          </li>
+        </ul>
+        <h4 class="text-md font-medium mt-4">Past Events</h4>
+        <ul>
+          <li *ngFor="let event of (pastEvents$ | async)">
+            {{ event.title }} - {{ event.date | date }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Attendees Summary -->
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+      <h3 class="text-lg font-semibold mb-4">Attendees Summary</h3>
+      <div>
+        <p>Total Attendees: {{ (attendees$ | async) }}</p>
+      </div>
+    </div>
+
+    <!-- Locations Summary -->
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+      <h3 class="text-lg font-semibold mb-4">Locations Summary</h3>
+      <div>
+        <ul>
+          <li *ngFor="let location of (locations$ | async)">
+            {{ location }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Calendar -->
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 lg:col-span-2">
+      <h3 class="text-lg font-semibold mb-4">Event Calendar</h3>
+     <app-calender></app-calender>
+    </div>
+
+  </div>
+</div>

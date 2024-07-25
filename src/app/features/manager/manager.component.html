@@ -1,0 +1,15 @@
+<app-manager-sidenav></app-manager-sidenav>
+<div class="manager-contents">
+
+      <!-- Apply route animation here -->
+      <div class="router-outlet-container" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+      <!-- <app-footer></app-footer> -->
+
+</div>
+
+
+
+
+

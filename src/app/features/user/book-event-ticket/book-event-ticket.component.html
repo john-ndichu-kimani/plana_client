@@ -1,0 +1,66 @@
+<!-- book-event-ticket.component.html -->
+<div *ngIf="event" class="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
+  <h2 class="text-2xl font-bold mb-4">{{ event.title }}</h2>
+  <p class="text-gray-700 mb-2">{{ event.description }}</p>
+  <p class="text-gray-600 mb-2">Date: {{ event.date | date }}</p>
+  <p class="text-gray-600 mb-4">Time: {{ event.time | date:'shortTime' }}</p>
+
+  <form [formGroup]="ticketForm" (ngSubmit)="bookTicket()" class="space-y-6">
+    <!-- Ticket Type Selection -->
+    <div>
+      <label for="ticket_id" class="block text-sm font-medium text-gray-700">Select Ticket Type:</label>
+      <select
+        id="ticket_id"
+        formControlName="ticket_id"
+        class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      >
+        <option *ngFor="let ticket of availableTickets" [value]="ticket.ticket_id">
+          {{ ticket.ticket_type }} - {{ ticket.price | currency }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Number of Tickets -->
+    <div>
+      <label for="number_of_tickets" class="block text-sm font-medium text-gray-700">Number of Tickets:</label>
+      <input
+        type="number"
+        id="number_of_tickets"
+        formControlName="number_of_tickets"
+        min="1"
+        required
+        class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      />
+    </div>
+
+    <!-- Total Price -->
+    <div *ngIf="ticketForm.get('ticket_id')?.value" class="text-lg font-semibold">
+      <p>Total Price: {{ ticketPrice | currency }}</p>
+    </div>
+
+    <!-- Emails for Group Booking -->
+    <div *ngIf="availableTickets.length > 0">
+      <label for="emails" class="block text-sm font-medium text-gray-700">Enter Emails for Group Booking (comma separated):</label>
+      <input
+        type="text"
+        id="emails"
+        formControlName="emails"
+        placeholder="user1@example.com, user2@example.com"
+        class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      [disabled]="!ticketForm.valid"
+      class="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:bg-gray-400"
+    >
+      Book Tickets
+    </button>
+  </form>
+</div>
+
+<div *ngIf="!event" class="max-w-lg mx-auto p-6 text-center">
+  <p class="text-gray-500">Loading event details...</p>
+</div>

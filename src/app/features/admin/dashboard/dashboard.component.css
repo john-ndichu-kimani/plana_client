@@ -1,0 +1,44 @@
+
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.card1,.card2, .card3, .card4 {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'i t'
+    'c c';
+}
+
+.card1 {
+  background-color: rgba(137, 43, 226, 0.267);
+}
+
+.card2 {
+  background-color: rgba(255, 166, 0, 0.267);
+}
+
+.card3 {
+  background-color: rgba(2, 253, 169, 0.284);
+}
+
+.card4 {
+  background-color: #ff9b9b3d;
+}
+
+i {
+  grid-area: i;
+  font-size: 35px;
+}
+
+h5 {
+  grid-area: c;
+}
+
+p {
+  grid-area: t;
+}

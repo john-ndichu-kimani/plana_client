@@ -1,0 +1,83 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the gap between elements */
+  align-items: center;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 200px; /* Adjust based on your preference */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box;
+}
+
+.search-button {
+  padding: 10px 20px; /* Add padding for better button appearance */
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-field,
+  .search-button {
+    width: 100%; /* Make each element take full width on smaller screens */
+  }
+}
+.event{
+background-color:#fff;
+}
+.image-container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container .event-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover .event-img {
+  transform: scale(1.2);
+}
+
+button{
+  border-radius: 2px;
+  color: #313131;
+  background-color:#d2cfcf7f;
+}
+button:hover{
+  background-color: #dcdee363;
+
+  border: none;
+  transition: all ease-in-out 0.2s;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pagination-controls button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

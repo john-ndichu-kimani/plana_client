@@ -1,0 +1,10 @@
+.body-content
+{
+height:400px;
+width: 550px;
+margin: 20px auto;
+background-image:linear-gradient(rgba(5, 5, 5, 0.433),rgba(9, 255, 124, 0.515)), url(/assets/404.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}

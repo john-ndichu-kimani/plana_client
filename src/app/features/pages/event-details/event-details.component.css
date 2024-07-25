@@ -1,0 +1,22 @@
+.wrapper{
+  background-image: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,1)),url(/assets/bg.jpg);
+  background-size: cover;
+
+  background-position: center;
+}
+
+.speakers{
+  display: flex;
+  /* grid-template-columns: repeat(autofill,minmax(200px,1fr)); */
+}
+h1{
+  color: rgb(250, 248, 248);
+}
+h2{
+  color: rgb(3, 177, 119);
+}
+
+.profile-card,.details-card
+{
+background-color: rgba(255, 255, 255, 0.733);
+}

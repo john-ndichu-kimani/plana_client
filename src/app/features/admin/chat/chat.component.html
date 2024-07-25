@@ -1,0 +1,56 @@
+<div class="p-4 sm:ml-64">
+  <div class="p-4 dark:border-gray-700">
+
+<div class=" h-[100vh]">
+  <div class="flex h-full">
+    <!-- Sidebar -->
+    <div class=" bg-gray-50 text-gray-700 p-4 overflow-y-auto">
+      <div class="flex flex-col">
+        <div class="p-2 mb-2 text-lg font-semibold border-b border-gray-700">Chats</div>
+        <!-- Example Users, replace with *ngFor and dynamic user data -->
+        <div class="p-2 cursor-pointer hover:bg-gray-200" (click)="selectUser(user)" *ngFor="let user of users">
+          <div class="flex items-center">
+            <div class="h-10 w-10 bg-gray-500 rounded-full mr-3"></div>
+            <div class="flex-1">
+              <p class="font-semibold ">{{ user.name }}</p>
+              <p class="text-sm text-gray-400">Last message...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chat Area -->
+    <div class="w-3/4 flex flex-col bg-gray-100 h-full">
+      <!-- Chat Header -->
+      <div class="p-4 bg-gray-50 text-gray-800 flex items-center">
+        <div class="h-10 w-15 bg-gray-700 rounded-full mr-3"></div>
+        <div class="flex-1">
+          <p class="font-semibold">{{ selectedUser?.name }}</p>
+          <p class="text-sm text-gree--400">Online</p>
+        </div>
+      </div>
+      <!-- Chat Messages -->
+      <div class="flex-1 p-4 overflow-y-auto bg-gray-100">
+        <div *ngFor="let message of messages" class="mb-4">
+          <div [ngClass]="{'text-right': message.sender === 'me', 'text-left': message.sender !== 'me'}">
+            <div class="inline-block max-w-xs">
+              <div [ngClass]="{'bg-green-500 text-white': message.sender === 'me', 'bg-white': message.sender !== 'me'}"
+                   class="p-2 rounded-lg shadow-md">
+                <p class="text-sm font-bold">{{ message.sender }}</p>
+                <p class="text-sm">{{ message.content }}</p>
+                <p class="text-xs text-gray-500">{{ message.timestamp | date:'short' }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Message Input -->
+      <div class="p-4 bg-gray-50">
+        <div class="flex">
+          <input [(ngModel)]="newMessage" type="text" placeholder="Type your message..." class="flex-1 p-2 border rounded-lg shadow-inner" />
+          <button (click)="sendMessage()" class="ml-4 bg-blue-500 text-white p-2 rounded-lg">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

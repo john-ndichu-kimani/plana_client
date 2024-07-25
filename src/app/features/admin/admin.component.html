@@ -1,1 +1,13 @@
-<p>admin works!</p>
+
+<app-sidebar></app-sidebar>
+<div class="admin-contents">
+  <div class="sm:ml-64">
+    <div class="p-4 dark:border-gray-700">
+      <!-- Apply route animation here -->
+      <div class="router-outlet-container" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+      <!-- <app-footer></app-footer> -->
+    </div>
+  </div>
+</div>

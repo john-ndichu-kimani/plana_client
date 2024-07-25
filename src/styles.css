@@ -9,9 +9,21 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  font-family: 'poppins', sans-serif;
+html{
+  scroll-behavior: smooth;
 }
+body{
+  font-family: sans-serif;
+  /* background-color: #181818; */
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 
 .grid-custom {
   @apply grid gap-4; /* Apply Tailwind grid and gap utilities */

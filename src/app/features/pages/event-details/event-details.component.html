@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+<div class="flex flex-col justify-center items-center p-4 sm:p-8 wrapper">
+
+    <h1 class="text-3xl font-bold text-left mb-4">DevOps Meetup</h1>
+
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-8">
+
+    <!-- Left Side: Speakers and Organizations -->
+    <div class="space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Guest Speakers</h2>
+        <!-- Speaker Profile Cards -->
+        <div class="profile-card  dark:bg-gray-800 p-4 my-4 border border-gray-300 rounded-lg shadow-md flex items-center space-x-4">
+          <img src="/assets/software-developer-6521720_1280.jpg" alt="user-profile" class="w-24 h-24 rounded-full object-cover">
+          <div class="">
+            <h2 class="text-xl font-bold">Arlemi Tuipault</h2>
+            <p>Senior DevOps Engineer</p>
+          </div>
+        </div>
+        <div class="profile-card dark:bg-gray-800 p-4 my-4 border border-gray-300 rounded-lg shadow-md flex items-center space-x-4">
+          <img src="/assets/kids-with-vr-glasses-abstract-futuristic-school-classroom.jpg" alt="user-profile" class="w-24 h-24 rounded-full object-cover">
+          <div>
+            <h2 class="text-xl font-bold">Jane Doe</h2>
+            <p>Senior DevOps Engineer</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+
+      </div>
+    </div>
+
+    <!-- Right Side: Event Details and Key Topics -->
+    <div class="space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Event Details</h2>
+        <div class="details-card p-4 rounded-lg shadow-md space-y-4">
+          <div>
+            <strong>Location:</strong> Microsoft Africa Development Center (ADC), Nairobi, Kenya
+          </div>
+          <div>
+            <strong>Date:</strong> 20th August 2024
+          </div>
+          <div>
+            <strong>Time:</strong> 9:00 AM - 5:00 PM
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg mb-8 mt-8 flex items-center">
+    <svg class="w-6 h-6 inline-block mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path>
+    </svg>
+    Book Now
+  </button>
+</div>
+<app-footer></app-footer>

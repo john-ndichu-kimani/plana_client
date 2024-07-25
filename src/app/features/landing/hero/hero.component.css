@@ -1,0 +1,79 @@
+
+.wrapper {
+  height: 75vh;
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0, 0, 0, 0.87)),url(/assets/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+   color: aquamarine;
+  margin-bottom: 30px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filters select,
+.filters input[type="text"],
+.filters button {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.filters select {
+  width: 200px;
+}
+
+.filters input[type="text"] {
+  width: 300px;
+}
+
+.filters button {
+  background-color: #218888;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #04b9b9;
+}
+.button-wrapper{
+  display: flex;
+  gap: 30px;
+}
+.active{
+  background-color: rgb(253, 226, 176);
+}
+.active:hover{
+  background-color: rgb(245, 189, 86);
+}
+button{
+  background: #c2eed8;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+

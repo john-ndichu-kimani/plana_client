@@ -1,0 +1,62 @@
+h1{
+  font-size: 30px;
+}
+span{
+  color: rgb(3, 151, 102);
+}
+.logo,p{
+  color: #ffff;
+}
+.profile-image{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.side-menu{
+  background-color: #232323;
+}
+.sidebar-profile{
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 20px;
+  align-items: center;
+  gap: 0.75rem;
+  flex-direction: row;
+  overflow: hidden;
+  border-radius: 10px;
+  min-width: 4rem;
+  cursor: pointer;
+  margin-top: auto;
+}
+.sidebar-profile:hover{
+  background-color: #fff;
+}
+.avatar-wrapper{
+  position: relative;
+  display: flex;
+}
+.avatar{
+  display: block;
+  object-fit: cover;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.avatar-name{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.user-name{
+  font-weight: 600;
+  text-align: left;
+  color: #E7EAEE;
+}
+.email{
+  color: #E7EAEE;
+  font-size: 0.8rem;
+}

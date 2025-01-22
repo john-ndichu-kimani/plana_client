@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../../interfaces/user.interface';
+import { environment } from '../../../environments/environments';
 
 export interface RequestManager {
   request_id: string;
@@ -21,8 +22,8 @@ export interface RequestManager {
 
 export class UserService {
 
-
-  private baseUrl = 'http://localhost:3002/user';
+  // private apiUrl = 'http://localhost:3002/user
+  private apiUrl = `${environment.baseURL}/user`
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +40,7 @@ export class UserService {
     const httpOptions = {
       headers: this.getAuthHeaders()
     };
-    return this.http.get<{profile:User}>(`${this.baseUrl}/profile`, httpOptions);
+    return this.http.get<{profile:User}>(`${this.apiUrl}/profile`, httpOptions);
   }
 
   updateProfile(profile: User): Observable<{ message: string, updatedProfile: User }> {
@@ -47,7 +48,7 @@ export class UserService {
       headers: this.getAuthHeaders()
     };
 
-    return this.http.put<{ message: string, updatedProfile: User }>(`${this.baseUrl}/profile`, profile, httpOptions);
+    return this.http.put<{ message: string, updatedProfile: User }>(`${this.apiUrl}/profile`, profile, httpOptions);
   }
 
 
@@ -55,7 +56,7 @@ export class UserService {
     const httpOptions = {
       headers: this.getAuthHeaders()
     };
-    return this.http.post<any>(`${this.baseUrl}/${user_id}/role`, { role }, httpOptions);
+    return this.http.post<any>(`${this.apiUrl}/${user_id}/role`, { role }, httpOptions);
   }
 
 
@@ -63,7 +64,7 @@ export class UserService {
     const httpOptions = {
       headers: this.getAuthHeaders()
     };
-    return this.http.post<{message?: string, error?: string}>(`${this.baseUrl}/request-manager`, {}, httpOptions);
+    return this.http.post<{message?: string, error?: string}>(`${this.apiUrl}/request-manager`, {}, httpOptions);
   }
 
 
@@ -72,7 +73,7 @@ export class UserService {
     const httpOptions = {
       headers: this.getAuthHeaders()
     };
-    return this.http.get<RequestManager[]>(`${this.baseUrl}/manager-requests`, httpOptions);
+    return this.http.get<RequestManager[]>(`${this.apiUrl}/manager-requests`, httpOptions);
   }
 
 
@@ -80,14 +81,14 @@ export class UserService {
     const httpOptions = {
       headers: this.getAuthHeaders()
     };
-    return this.http.patch<any>(`${this.baseUrl}/requests/${requestId}/approve`, httpOptions);
+    return this.http.patch<any>(`${this.apiUrl}/requests/${requestId}/approve`, httpOptions);
   }
 
   rejectManagerRequest(requestId: string): Observable<any>{
     const httpOptions = {
       headers: this.getAuthHeaders()
     };
-    return this.http.post<any>(`requests/${this.baseUrl}/reject`, httpOptions);
+    return this.http.post<any>(`requests/${this.apiUrl}/reject`, httpOptions);
   }
 
 }

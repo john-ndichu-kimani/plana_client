@@ -1,17 +1,18 @@
 <div class="p-4 sm:ml-64">
   <div class="p-4 rounded-lg dark:border-gray-700">
  <div class="flex items-center justify-between">
-  <h1 class="text-gray-900 text-2xl font-semibold">Available Events</h1>
+  <h1 class="text-gray-900 text-2xl font-semibold">Upcoming Events</h1>
 
   <div *ngIf="success" class="p-3 text-green-700 bg-green-200 rounded-md">{{notificationMsg}}</div>
   <div *ngIf="error" class="p-3 text-red-700 bg-green-200 rounded-md">{{notificationErrorMsg}}</div>
-  <button class="py-3 px-3 bg-slate-600" (click)="requestToBeEventOrganizer()">Become An Event Organizer</button>
+  <button class="bg-slate-600" ></button>
+  <a (click)="requestToBeEventOrganizer()" class="bg-green-300 p-3 rounded-sm cursor-pointer">Become An Event Organizer</a>
 
 </div>
 <form class="my-10" (ngSubmit)="searchEvents()">
   <div class="filters">
-    <input type="text" name="searchTerm" id="searchTerm" [(ngModel)]="searchTerm" placeholder="Enter name or description" class="input-field border-blue-500">
-    <select name="location" id="location" [(ngModel)]="selectedCounty" class="input-field border-blue-500">
+    <input type="text" name="searchTerm" id="searchTerm" [(ngModel)]="searchTerm" placeholder="Enter name or description" class="input-field border-blue-500 rounded-md">
+    <select name="location" id="location" [(ngModel)]="selectedCounty" class="input-field border-blue-500 rounded-md">
       <option value="" disabled selected>Select County</option>
       <option *ngFor="let county of counties" [value]="county">{{ county }}</option>
     </select>
@@ -32,9 +33,7 @@
       <div class="p-2">
         <h2 class="text-xl font-bold text-gray-800 mb-2">{{ event.title }}</h2>
         <p class="text-gray-600 mb-4">{{ event.description }}</p>
-        <button (click)="viewEventDetails(event.event_id)" class=" w-full py-2 px-4 bg-gradient-to-r from-blue-400 to-violet-400 relative b-0">
-          View Details
-        </button>
+        <a (click)="viewEventDetails(event.event_id)" class="text-white bg-green-400 cursor-pointer p-3 my-3 font-sans"> View Event</a>
       </div>
     </div>
   </div>

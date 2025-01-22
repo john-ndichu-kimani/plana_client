@@ -28,6 +28,7 @@
     "apexcharts": "^3.50.0",
     "flowbite": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "frontend": "file:",
     "highcharts": "^11.4.6",
     "jwt-decode": "^4.0.0",
     "ngx-toastr": "^19.0.0",

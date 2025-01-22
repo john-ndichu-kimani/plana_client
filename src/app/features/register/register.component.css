@@ -1,18 +1,9 @@
-section
-{
-  height: 100vh;
-  background-image:linear-gradient(rgba(174, 172, 172, 0.5),rgba(68, 67, 67, 0.5)), url(/assets/software-developer-6521720_1280.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 
 .wrapper{
   background:linear-gradient(45deg,rgba(244, 245, 246, 0.789),#ffffff) ;
   border-radius: 10px;
   height: 90vh;
   max-width: 550px;
-  background-color: blueviolet;
   margin: 0 auto;
 
 }

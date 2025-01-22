@@ -15,6 +15,7 @@
           "options": {
             "allowedCommonJsDependencies": ["highcharts"],
             "outputPath": "dist/frontend",
+            "baseHref": "/app/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
